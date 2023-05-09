@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="action_project_employee" model="ir.actions.act_window">
+            <field name="name">Project Employees</field>
+            <field name="res_model">project.employee</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new employee project.
+                </p>
+            </field>
+        </record>
+
+        <!-- Vue liste des employés projet -->
+
+
+        <!-- Vue formulaire des employés projet -->
+     <record id="view_project_employee_form" model="ir.ui.view">
+        <field name="model">project.employee</field>
+        <field name="name">project.employee.form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="project_id" default_focus="1"/>
+                             <field name="weight"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Employees" name="employees">
+
+                                <form>
+                                    <group>
+                                        <field name="employee_ids">
+                                        </field>
+                                    </group>
+                                </form>
+
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+        <!-- Action pour ouvrir la vue liste des employés projet -->
+      <!--   <record id="action_project_employee" model="ir.actions.act_window">
+            <field name="name">Project Employees</field>
+            <field name="res_model">project.employee</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_project_employee_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new employee project.
+                </p>
+            </field>
+        </record>   -->
+
+        <menuitem id="menu_project"
+                  name="Project "
+                  parent="menu_project_employee"
+                  action="action_project_employee"
+                  sequence="10"/>
+
+
+    </data>
+</odoo>

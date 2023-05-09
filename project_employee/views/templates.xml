@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+        <menuitem id="menu_project_employee"
+                  name="Project Employees"
+                  sequence="10"/>
+        <menuitem id="menu_project_master"
+                  name="Project Employees"
+                  parent="menu_project_employee"
+                  sequence="10"/>
+
+
+
+</odoo>
